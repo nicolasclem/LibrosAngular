@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Resultado } from '../modelos/resultado';
+import { Cliente } from '../modelos/cliente';
 
 @Injectable
   ({
@@ -21,5 +22,10 @@ export class ClienteService
   getCliente(): Observable<Resultado>
   {
     return this.peticion.get<Resultado>(this.url);
+  }
+
+  createCliente(cliente: Cliente): Observable<Resultado>
+  {
+    return this.peticion.post<Resultado>(this.url, cliente);
   }
 }

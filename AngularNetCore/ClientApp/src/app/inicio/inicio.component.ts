@@ -14,7 +14,7 @@ export class InicioComponent {
 
   public Navegar() {
 
-    this.router.navigate(['/cliente'], { queryParams: {nombre:'bauti',email:'bauti@test.com'} });
+    this.router.navigate(['/productos']);
   }
 
 }
