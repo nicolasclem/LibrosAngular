@@ -11,6 +11,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 //import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -24,6 +25,7 @@ import { ClienteComponent } from './cliente/cliente.component';
     //FetchDataComponent,
     InicioComponent,
     ClienteComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +36,8 @@ import { ClienteComponent } from './cliente/cliente.component';
      // { path: 'counter', component: CounterComponent },
       //{ path: 'fetch-data', component: FetchDataComponent },
       { path: 'inicio', component: InicioComponent },
-      { path: 'cliente', component: ClienteComponent }
+      { path: 'cliente', component: ClienteComponent },
+      { path: 'login', component: LoginComponent }
     ])
   ],
   providers: [],
