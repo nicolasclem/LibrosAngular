@@ -12,7 +12,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { LoginComponent } from './login/login.component';
-
+import { ProductoComponent } from './productos/productos.component';
 
 
 
@@ -26,6 +26,8 @@ import { LoginComponent } from './login/login.component';
     InicioComponent,
     ClienteComponent,
     LoginComponent,
+    ProductoComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,7 +39,8 @@ import { LoginComponent } from './login/login.component';
       //{ path: 'fetch-data', component: FetchDataComponent },
       { path: 'inicio', component: InicioComponent },
       { path: 'cliente', component: ClienteComponent },
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'productos', component: ProductoComponent }
     ])
   ],
   providers: [],

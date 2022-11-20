@@ -1,6 +1,6 @@
 export interface Resultado
 {
-  ObjetoGenerico: any;
+  objetoGenerico: any;
   Texto: string;
   Error: string;
 }

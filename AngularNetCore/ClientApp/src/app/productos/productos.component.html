@@ -1,0 +1,9 @@
+
+<ul *ngIf="listaProductos">
+  <li *ngFor="let producto of listaProductos">
+    <p>{{producto.nombre}}</p>
+    <span>$ {{producto.precio}}- - -</span>
+    <span>{{producto.descripcion}}</span>
+  </li>
+
+</ul>
