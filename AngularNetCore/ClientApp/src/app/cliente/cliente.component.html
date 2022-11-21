@@ -1,21 +1,32 @@
 <div class="container">
   <h3>Alta de cliente</h3>
-
-  <div class="form-group row">
-    <label for="Nombre" class="col-sm-2 col-form-label">
-      Nombre:
-    </label>
-    <div class="col-sm-10">
-      <Input id="Nombre" class="form-control" placeholder="Nombre" />
-    </div>
-  </div>
+  <form [formGroup]="altaForm" (ngSubmit)="Alta()">
+    <div class="form-group row">
+      <label for="Nombre" class="col-sm-2 col-form-label">
+        Nombre:
+      </label>
+      <div class="col-sm-10">
+        <input id="Nombre" type="text" class="form-control" placeholder="Nombre"
+               formControlName="nombre"
+               [ngClass]="{'is-invalid':enviado && f.nombre.errors}"/>
+          <div *ngIf="enviado && f.nombre.errors" class="invalid-feedback">
+          <div *ngIf="f.nombre.errors.required">Nombre es obligatorio</div>
+        </div>
+      </div>
+    </div> 
   <br />
   <div class="form-group row">
     <label for="Email" class="col-sm-2 col-form-label" >
       Email:
     </label>
     <div class="col-sm-10">
-      <Input id="Email" class="form-control" type="email" placeholder="Email" />
+      <input id="Email" type="text" class="form-control" placeholder="Email"
+             formControlName="email"
+             [ngClass]="{'is-invalid':enviado && f.email.errors}" />
+        <div *ngIf="enviado && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email es obligatorio</div>
+          <div *ngIf="f.email.errors.email"> Formato email  incorrecto</div>
+        </div>
     </div>
   </div>
   <br />
@@ -24,11 +35,18 @@
       Password:
     </label>
     <div class="col-sm-10">
-      <Input id="Password" class="form-control" type="password" placeholder="Password" />
+      <input id="Password" type="password" class="form-control" placeholder="Password"
+             formControlName="pass"
+             [ngClass]="{'is-invalid':enviado && f.pass.errors}" />
+      <div *ngIf="enviado && f.pass.errors" class="invalid-feedback">
+        <div *ngIf="f.pass.errors.required">Password es obligatorio</div>
+      </div>
     </div>
   </div>
   <br />
   <div class="row">
-    <button class="btn btn-primary" (click)="Alta()">Guardar</button>
+    <button class="btn btn-primary" type="submit">Guardar</button>
   </div>
+  </form>
 </div>
+

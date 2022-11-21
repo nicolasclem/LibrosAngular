@@ -71,6 +71,7 @@ namespace AngularNetCore.Controllers
             {
 
                 res.Error = $"Error al dar de alta clientes! {ex.Message}";
+                res.Texto = "Se produjo un error al dar de alta";
             }
 
             return Ok(res);
